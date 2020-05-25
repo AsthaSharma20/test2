@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t annydesigns/node .
   - docker images mannydesigns/de
+
+before-deploy:
+  - docker login -u asthalearn -p Dock20199
+
+deploy:
+  provider: script
+  script: docker push mannydesigns/node
+  on: 
+    branch: master
