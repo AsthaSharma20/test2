@@ -3,14 +3,14 @@ services:
   - docker
 
 script:
-  - docker build -t mannydesigns/node .
-  - docker images mannydesigns/node
+  - docker build -t mannydesigns/node1 .
+  - docker images mannydesigns/node1
 
 before-deploy:
   - docker login -u "asthalearn" -p "Dock20199"
 
 deploy:
   provider: script
-  script: docker push mannydesigns/node
+  script: docker push mannydesigns/node1
   on: 
     branch: master
